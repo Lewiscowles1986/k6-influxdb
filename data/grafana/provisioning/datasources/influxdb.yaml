@@ -1,0 +1,25 @@
+apiVersion: 1
+
+datasources:
+  - name: InfluxDB
+    type: influxdb
+    typeName: InfluxDB
+    access: proxy
+    url: http://influxdb:8086
+    basicAuth: true
+    basicAuthUser: my-user
+    isDefault: true
+    editable: true
+    user: ""
+    database: ""
+    secureJsonData:
+      basicAuthPassword: my-password
+      token: my-super-secret-auth-token
+    secureJsonFields:
+      basicAuthPassword: true
+      token: true
+    jsonData:
+      httpMode: POST
+      defaultBucket: k6
+      organization: my-org
+      version: Flux
